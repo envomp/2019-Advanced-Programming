@@ -1,0 +1,19 @@
+while True:
+    order = input()
+    if order == "0 0 0":
+        break
+    else:
+        order = list(map(lambda x: int(x), order.split(" ")))
+    morning_data = list(map(lambda x: int(x), input().split(" ")))
+    evening_data = list(map(lambda x: int(x), input().split(" ")))
+    drivers = []
+    for driver in range(order[0]):
+        maxx = max(morning_data)
+        minn = min(evening_data)
+        a = maxx + minn
+        morning_data.remove(maxx)
+        evening_data.remove(minn)
+        a -= order[1]
+        a = max(a, 0)
+        drivers.append(a*order[2])
+    print(sum(drivers))

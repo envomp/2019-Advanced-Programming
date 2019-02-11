@@ -1,0 +1,9 @@
+while True:
+    order = input()
+    if order == "0 0 0":
+        break
+    else:
+        order = order.split(" ")
+    morning_data = map(lambda x: int(x), input().split(" "))
+    evening_data = map(lambda x: int(x), input().split(" "))
+    print((max(sum(morning_data) - order[1], 0) + max(sum(evening_data) - order[1], 0)) * order[2])

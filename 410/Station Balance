@@ -1,24 +1,27 @@
-
-while True:
-    train_in = list(range(1, int(input()) + 1))
-    if not train_in:
-        exit()
+p = 0
+try:
     while True:
-        train_in_proxy = train_in.copy()
-        train_out = list(map(lambda x: int(x), input().split(" ")))
-        stack = []
-        if train_out == [0]:
-            print()
-            break
-        while True:
-            if stack and stack[-1] == train_out[0]:
-                stack.pop(-1)
-                train_out.pop(0)
+        p += 1
+        order = list(map(lambda x: int(x), input().split()))
+        elem = sorted(list(map(lambda x: int(x), input().split())), reverse=True)
+        answers = [[] for _ in range(order[0])]
+        for i, spec in enumerate(elem):
+            if i < len(answers):
+                answers[i].append(spec)
             else:
-                if not train_in_proxy:
-                    print("No")
-                    break
-                stack.append(train_in_proxy.pop(0))
-            if not stack and not train_in_proxy:
-                print("Yes")
-                break
+                answers[2 * len(answers) - i - 1].append(spec)
+        print(f"Set #{p}")
+        for i, cell in enumerate(answers):
+            prop = ' '.join(list(map(lambda x: str(x), cell)))
+            if prop:
+                print(f" {i}: {prop}")
+            else:
+                print(f" {i}:")
+        answers = [sum(x) for x in answers]
+        average = sum(answers) / len(answers)
+        imbalance = round(sum([abs(x - average) for x in answers]), 5)
+        print(f"IMBALANCE = {'%.5f' % imbalance}\n")
+
+
+except EOFError:
+    exit()

@@ -1,0 +1,15 @@
+while True:
+    line = input()
+    if line == '#':
+        break
+    elif line == "":
+        print("00 00")
+    else:
+        result = 0
+        for c in line:
+            result = ((result * 256) + ord(c)) % 34943
+        result = 34943 - (result * 65536) % 34943
+        answer = str(hex(result))[2:].upper()
+        while len(answer) < 4:
+            answer = "0" + answer
+        print(answer[:2], answer[2:])

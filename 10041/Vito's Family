@@ -1,7 +1,0 @@
-import statistics
-
-lines = input()
-for x in range(int(lines)):
-    cur_line = list(map(lambda x: int(x), input().split()))[1::]
-    y = statistics.median(cur_line)
-    print(int(sum([abs(x - y) for x in cur_line])))

@@ -1,0 +1,29 @@
+times = int(input())
+for i in range(times):
+    a = 0
+    b = 0
+    line = input()
+    bool = True
+    opened = []
+    for char in line:
+        if char == "(":
+            a += 1
+            opened.append("a")
+        elif char == "[":
+            b += 1
+            opened.append("b")
+        elif char == ")":
+            a -= 1
+            if a >= 0 and opened.pop(-1) != "a":
+                bool = False
+        elif char == "]":
+            b -= 1
+            if b >= 0 and opened.pop(-1) != "b":
+                bool = False
+        if a < 0 or b < 0:
+            bool = False
+    if bool and not a and not b:
+        print("Yes")
+    else:
+        print("No")
+exit()

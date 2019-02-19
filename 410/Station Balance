@@ -1,0 +1,27 @@
+p = 0
+try:
+    while True:
+        p += 1
+        order = list(map(lambda x: int(x), input().split()))
+        elem = sorted(list(map(lambda x: int(x), input().split())), reverse=True)
+        answers = [[] for _ in range(order[0])]
+        for i, spec in enumerate(elem):
+            if i < len(answers):
+                answers[i].append(spec)
+            else:
+                answers[2 * len(answers) - i - 1].append(spec)
+        print(f"Set #{p}")
+        for i, cell in enumerate(answers):
+            prop = ' '.join(list(map(lambda x: str(x), cell)))
+            if prop:
+                print(f" {i}: {prop}")
+            else:
+                print(f" {i}:")
+        answers = [sum(x) for x in answers]
+        average = sum(answers) / len(answers)
+        imbalance = round(sum([abs(x - average) for x in answers]), 5)
+        print(f"IMBALANCE = {'%.5f' % imbalance}\n")
+
+
+except EOFError:
+    exit()

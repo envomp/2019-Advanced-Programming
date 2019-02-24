@@ -31,7 +31,7 @@ for _ in range(nr_of_cases):
     number_dict = {}
     number_numbers = int(input())
     for _ in range(number_numbers):
-        lane = input()
+        lane = input().replace("-", "").strip()
         if not lane:
             break
         b_list.append(lane)
@@ -48,6 +48,13 @@ for _ in range(nr_of_cases):
         else:
             number_dict[new_number] += 1
     answer = sorted([y for x, y in enumerate(number_dict) if number_dict[y] != 1])
-    for element in answer:
-        print(f"{element[:3]}-{element[3:]} {number_dict[element]}")
+    if not answer:
+        print("No duplicates.")
+    else:
+        for element in answer:
+            print(f"{element[:3]}-{element[3:]} {number_dict[element]}")
+    try:
+        input()
+    except EOFError:
+        exit()
     print()

@@ -1,9 +1,13 @@
+
 nr_of_cases = int(input())
 input()
-for _ in range(nr_of_cases):
+for i in range(nr_of_cases):
     b_list = []
     while True:
-        lane = input()
+        try:
+            lane = input()
+        except EOFError:
+            break
         if not lane:
             break
         b_list.append([lane, sorted(lane.replace(" ", ""))])
@@ -15,4 +19,5 @@ for _ in range(nr_of_cases):
                     if len(a_list[original][1]) == len(a_list[match][1]):
                         if a_list[original][1] == a_list[match][1]:
                             print(f"{a_list[original][0]} = {a_list[match][0]}")
-    print()
+    if i != nr_of_cases - 1:
+        print()

@@ -10,10 +10,9 @@ while True:
         n = 0
         for _ in range(times):
             cases.append(int(input()))
-        combinisations = list(list(itertools.combinations(cases, 2)))
+        combinisations = tuple(itertools.combinations(cases, 2))
         for combo in combinisations:
-            nr = gcd(combo[0], combo[1])
-            if nr == 1:
+            if gcd(combo[0], combo[1]) == 1:
                 n += 1
         if n == 0:
             print("No estimate for this data set.")

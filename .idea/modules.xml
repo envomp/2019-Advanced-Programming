@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/104 - Arbitrage/104 - Arbitrage.iml" filepath="$PROJECT_DIR$/104 - Arbitrage/104 - Arbitrage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/467/467.iml" filepath="$PROJECT_DIR$/467/467.iml" />
+      <module fileurl="file://$PROJECT_DIR$/389/389.iml" filepath="$PROJECT_DIR$/389/389.iml" />
+      <module fileurl="file://$PROJECT_DIR$/640 - Self Numbers/640 - Self Numbers.iml" filepath="$PROJECT_DIR$/640 - Self Numbers/640 - Self Numbers.iml" />
       <module fileurl="file://$PROJECT_DIR$/793/793.iml" filepath="$PROJECT_DIR$/793/793.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/iti0214-2019.iml" filepath="$PROJECT_DIR$/.idea/iti0214-2019.iml" />
     </modules>

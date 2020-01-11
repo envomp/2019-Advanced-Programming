@@ -1,0 +1,1 @@
+Algorithmic exercises solved in [UVA online judge](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8) environment
